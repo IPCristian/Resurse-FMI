@@ -1,0 +1,12 @@
+Exercitiul 1
+------------
+a) Este o imagine cu cod, nu apare vreo eroare si nu pare nimic suspicios
+b) La final se poate observa cod malitios
+c) VirusTotal il considera Safe
+d) Imaginea contine embedded un executabil
+e) Sunt niste librarii ce ar putea ajuta la executarea rulabilului embed-uit in imagine
+f) Sterge primul PDF din folderul curent daca are acces la DLL-uri
+
+Exercitiul 2
+------------
+Parola care sa aiba 6 caractere, un caracter aleator care sa inlocuiasca '\0' de dupa parola originala si apoi acele 6 caractere initiale din nou (Exemplu: abcdef0abcdef). Se realizeaza un buffer overflow.

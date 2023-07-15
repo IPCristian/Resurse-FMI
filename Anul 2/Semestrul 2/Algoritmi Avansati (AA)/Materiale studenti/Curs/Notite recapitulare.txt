@@ -1,0 +1,54 @@
+Raport Vectori:
+
+r(A,C,B) = x => AC = -x*(CB) (Vectori) ==> C - A = -x*(B - C)
+r(A,B,C) < 0 ===> B Nu este intre A si C
+
+A(1,2,3), B(4,5,6) si C(alpha,7,8) coliniare <=> AB si BC coliniare <=>
+<=> B-A = (3,3,3) si C-B = (alpha - 4,2,2) sunt proportionale => alpha = 6
+--------------------------------------------------------------------------------------------------
+Triangulare:
+
+Nr. Triangulari = 2*N - K - 2 => (N = noduri totale, K = Noduri pe infasuratoare convexa)
+Muchii = 3N - K - 3
+Nr fete = nr triunghiuri + 1 (exteriorul intregului poligon)
+Astea functioneaza pe  multime de puncte
+---------------------------------------------------------------------------------------------------
+Semiplane:
+
+Ecuatie: aX+bY+c <= 0
+
+Semiplan superior/inferior => Alegem un punct, vedem daca aX+bY+c (de deasupra sa) <= 0 ==> Plan superior
+Altfel este plan inferior
+--------------------------------------------------------------------------------------------------
+Poligoane:
+
+Varf Convex => Unghi convex => <180
+Varf Concav => Unghi concav => >180
+
+Principal => Daca ducem segm din vecinii sai, niciun alt punct din poligon nu se afla pe triunghiul format
+Secondar => Opus principal
+
+y-monoton => Orice dreapta paralela la Ox intersecteaza poligonul in maxim 2 puncte
+--------------------------------------------------------------------------------------------------
+Amplasare camere: 
+
+Coloram punctele poligonului incat niciun punct conectat prin triangulare
+sa nu aiba aceeasi culoare cu un vecin. La final punem camerele in punctele colorate cu culoarea
+ce apare de cele mai putine ori.
+--------------------------------------------------------------------------------------------------
+Trapezoid:
+
+Harta trapezoidala: MAXIM 6n+4 varfuri, 3n+1 trapeze pentru n segmente
+
+Nr. minim => Segmente paralele de dimensiune egala
+--------------------------------------------------------------------------------------------------
+Voronoi:
+
+Nr. Drepte (muchii de tip semidreapta) = nr. de varfuri pe infasuratoarea convexa
+--------------------------------------------------------------------------------------------------
+Dualitate:
+
+pentru p = (px,py) => p*  : (y = px * x - py) (duala lui p)
+d : (y = mx+n ) => d* = (m,-n) (dualul lui d)
+
+

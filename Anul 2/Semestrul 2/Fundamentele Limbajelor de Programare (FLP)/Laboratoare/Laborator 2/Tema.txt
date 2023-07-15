@@ -1,0 +1,111 @@
+%fib/2
+%fib(+N,-Rez).
+
+fib(0,1).
+fib(1,1).
+fib(N,Rez) :-
+N1 is N-1,
+N2 is N-2,
+fib(N1,Rez1),
+fib(N2,Rez2),
+Rez is Rez1+Rez2.
+
+%square/2
+
+square(N,C) :-
+squareAux(N,1,1,C).
+
+
+squareAux(N,N,N,C) :-
+write(C).
+
+squareAux(N,I,N,C) :-
+write(C),
+nl,
+I1 is I+1,
+squareAux(N,I1,1,C).
+squareAux(N,I,J,C) :-
+write(C),
+J1 is J+1,
+squareAux(N,I,J1,C).
+
+cls :- write('\33\[2J').
+
+element_of(Elem,[Elem|_]).
+element_of(Elem,[_|Tail]) :-
+element_of(Elem,Tail).
+
+concat_lists([],L,L).
+concat_lists([H|T],L2,[H1|T3]) :-
+concat_lists(T1,L2,T3).
+
+all_a([a]).
+all_a([a | T]) :-
+all_a(T).
+
+trans_a_b([a],[b]).
+trans_a_b([a | T1], [b | T2]) :-
+trans_a_b(T1,T2).
+
+scalarMult(_,[],[]).
+scalarMult(X,[H1|T1],[H2|T2]) :-
+H2 is X * H1,
+scalarMult(X,T1,T2).
+
+dot([],[],0).
+dot([H1|T1],[H2|T2],R) :-
+dot(T1,T2,TR),
+R is TR + H1*H2.
+
+max([X],X).
+max([H|T],Max) :-
+max(T,TailMax),
+H > TailMax,
+Max = H.
+max([H|T],Max) :-
+max(T,TailMax),
+H =< TailMax,
+Max = TailMax.
+
+palindrome(X) :-
+reverse(X, X).
+
+reverse_of([],L,L).
+reverse_of([H1|T1], LAux, LR) :-
+reverse_of(T1, [H1 | LAux], LR).
+
+reverse_of(L,LR) :-
+reverse_of(L, [], LR).
+
+palindrome_of(X) :-
+reverse_of(X,X).
+
+remove_duplicates([],[]).
+remove_duplicates([H|T],LR) :-
+member(H,T),
+remove_duplicates(T,LR).
+remove_duplicates([H|T],[H | TR]) :-
+not(member(H,T)),
+remove_duplicates(T, TR).
+
+% Tema
+
+% Fibonacci unde retin ultimele 2 valori
+
+fibonacci(0,1).
+fibonacci(1,1).
+fibonacci(N,Rez) :-
+fibonacci(N,Rez,2,2,1).
+fibonacci(N,Rez,N,Rez,_).
+fibonacci(N,Rez,Iterator,Last,SndToLast) :-
+NewLast is Last+SndToLast,
+Iterator1 is Iterator+1,
+fibonacci(N,Rez,Iterator1,NewLast,Last).
+
+% Ex 8 - Laborator 2
+
+replace([],_,_,[]).
+replace([A|T],A,B,[B|T1]) :-
+replace(T,A,B,T1).
+replace([H|T],A,B,[H|T1]) :-
+replace(T,A,B,T1).

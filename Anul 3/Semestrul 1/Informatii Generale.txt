@@ -1,0 +1,55 @@
+Programarea Jocurilor:
+
+	- Proiect 6-7 persoane
+	- Team manager si Senior dev prezenti la lab
+	- Version Control: Github / GitLab
+	- Sapt 2 -> Echipe
+	- Sapt 3 -> Alegere Proiect
+	- Sapt 3-11 -> Lucru
+	- Sapt 12 -> Prezentare
+
+
+Securitatea Informatiei:
+
+	- Examen 6p, Laborator 3p, Teme 1p
+	- Prezenta optionala
+	- Minim 5 per total, nu e prag individual
+	- Temele se pot prezenta in ultimele 3 laboratoare
+	- Materialele sunt pe  Moodle
+	- Examen cu materiale in fata
+
+
+Inginerie Software:
+
+	- Cursurile sunt pe teams
+	- Prezentare proiect in sesiune
+	- Proiect 4-6 persoane
+	- 3 etape :
+		- Formare echipa + idee proiect
+		- Project analysis
+		- Development (Sprinturi)
+	- 2 deadlineuri :
+		- Deliverable pe la mijloc (40p)
+		- Prezentare proiect final (60p)
+	- cerintele pe teams
+
+
+Calculabilitate si Complexitate:
+	
+	- Examen scris 2 subiecte:
+		- Teorie 50% din nota
+		- Seminar 33% din nota
+	- In timpul semestrului:
+		- Seminar 17% din nota
+	- Materiale pe teams
+
+
+Reinforcement Learning:
+
+	- Proiect 3-5 persoane -> 100% din nota
+	- Se admit si <3 sau >5 persoane
+
+
+Angular & React:
+
+	- Proiect individual, informatii discord

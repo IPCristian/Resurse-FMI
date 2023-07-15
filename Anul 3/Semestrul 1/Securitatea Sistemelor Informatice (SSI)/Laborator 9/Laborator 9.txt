@@ -1,0 +1,168 @@
+RSA
+- criptosistem cu cheie publica
+- Setup: p,q nr prime
+	- > 2^lambda
+	- p*q = n
+	     $
+	- e <- Z(fi(n))
+
+- Fi(n) = nr numerelor care sunt mai mici decat n si prime cu n, fi(n) = n-1 
+- Fi(n) = fi(p*q) = (p-1)(q-1) 
+- d a.i. e * d congruent 1 (prod fi(n))
+
+Parametrii publici: (n,e)
+Cheia privata: p,q,d
+
+-----------------
+Encrypt:
+
+m apartine Z(n)
+c = m^e (mod n)
+
+-----------------
+Decrypt (c,d,n):
+
+m = c^d (mod n)
+
+-----------------
+Corectitiudine:
+
+m' = c^d = (m^e)^d = m^ed
+
+T.Lagrange: -v- x apartine G grup, x^|G| = 1.G
+
+m apartine Z(n)
+ord(Z(n)) = fi(n) = (p-1)(q-1)
+-----------------
+p,q,d private
+Cazuri:
+	- d aflat => Toate mesajele criptate pot fi decriptate
+	- Daca p / q sunt aflate => Atacatorul poate afla q / p si poate calcula Fi(n) = (p-1)(q-1). Stiind n,e (publice) => Poate calcula d (folosind Alg. Euler pt c.m.m.d.c.)
+
+-----------------
+Problema factorizarii:
+
+	- Date p,q  nr. prime, n = p*q, este dificil de a gasi divizorii p si q pornind doar de la n
+
+	- c.m.m.d.c.(e, Fi(n)) = 1 (De obicei e = 65 537 = 2^2^4 + 1) 
+
+-----------------
+Ex. de problema:
+
+m1 = 5
+m2 = 7
+m3 = 35
+--------
+c1 = 5^e
+c2 = 7^e
+c3 = 35^e = (7*5)^e = 7^e * 5^e = c1 * c2
+-----------------
+Semnaturi digitale cu RSA:
+- Varianta 1 (Gresita)
+	- Semnatura s = m^d
+	- Trimit(s,m)
+	- Verificarea semnaturii s^e = m ?
+	- s0 = m0^d
+	- s1 = m1^d
+	- Trimit(s0,m0),(s1,m1)
+	- Atacatorul poate calcula m0*m1, s0*s1 = m0^d * m1^d = (m0*m1)^d
+	- Atacatorul trimite (s0*s1,m0*m1)
+
+- Varianta 2 (Buna)
+	- h = hash(m)
+	- s = h^d
+	- Trimite (h,s)
+	- Verificarea semnaturii h = s^e
+-------------------------------------------------
+
+Exercitiul 1:
+	
+N=234841136411758273000763594354834942653
+e=65537
+
+p = 14086963408384851001 (p*q = n)
+q = 16670813262138239653
+
+Fi(n) = (p-1)(q-1) = (14086963408384851000)*(16670813262138239652) = 
+= 234841136411758272970005817684311852000
+
+d*e = 1 (mod Fi(n))
+d = e^-1 mod 234841136411758272970005817684311852000
+d = 131139372709478882400526464589358085473
+
+-----------------------------
+Exercitiul 2:
+
+a) openssl genrsa -out alice_sk.pem 2048
+b) publicExponent: 65537
+c) openssl rsa -in alice_sk.pem -text
+modulus:
+    00:ae:06:a1:ba:ef:04:e6:f4:c3:aa:47:a3:38:6c:
+    d6:33:0c:9f:e2:b0:f0:cb:88:19:c4:37:ff:0e:79:
+    fe:da:0e:c0:41:c5:55:53:bc:8c:55:8f:6e:78:f2:
+    af:99:cf:53:0c:47:fb:25:de:d0:42:59:a9:7b:ea:
+    f1:31:a1:64:4a:0f:4e:47:2b:50:ea:78:0f:10:fd:
+    a0:53:00:5e:be:59:fb:46:c9:0c:5e:e2:e6:20:b1:
+    a0:4d:61:e5:87:d6:bb:59:44:cb:b9:2c:86:9f:07:
+    56:af:fc:49:ff:f3:a2:ab:3a:69:7e:23:fb:8c:72:
+    3e:a1:53:fe:ab:cc:79:a4:1f:ce:bc:dc:95:60:15:
+    48:c7:02:c4:cb:e1:be:03:7b:26:d4:f4:41:79:66:
+    bf:74:e6:29:17:85:8b:ae:13:c6:18:d1:d7:7e:2d:
+    32:09:79:0c:96:e0:e7:08:c5:b7:20:a6:91:81:53:
+    75:92:47:51:77:12:25:3c:b0:5b:f9:9f:d3:f6:fa:
+    e4:38:55:2a:ab:62:e0:bc:f1:36:95:e5:22:fa:a7:
+    17:e9:51:45:1d:d4:f2:6f:5a:71:7d:aa:f5:ba:f1:
+    bb:07:16:7e:cd:1f:c2:ca:a3:66:9c:f5:19:9f:b4:
+    9d:84:66:eb:01:ce:fd:6c:15:ec:2e:cf:62:4a:3f:
+    42:1d
+prime1:
+    00:d4:8b:94:a5:03:bf:17:3b:aa:9b:86:f3:38:e0:
+    b8:f7:9b:b7:4e:b1:3c:9e:09:69:f3:9f:2e:66:6f:
+    e4:dd:36:b0:a2:68:98:a6:0a:0b:bf:f5:51:e2:40:
+    f7:b0:a5:38:e0:cc:bc:7a:55:32:32:5d:2e:0f:2a:
+    00:9d:77:3a:ab:98:e9:d7:05:7a:98:b6:12:27:ce:
+    5c:ac:b1:80:ea:eb:a7:9e:fe:0e:a1:80:df:d4:aa:
+    d9:8d:c0:37:9f:67:1b:70:73:d8:97:b0:01:54:a8:
+    a1:5d:14:c8:ea:bf:10:45:95:f5:ce:1d:95:b6:68:
+    ce:ee:14:80:15:08:3a:1f:97
+prime2:
+    00:d1:9a:fc:39:16:08:91:19:98:af:17:d8:90:2d:
+    f1:dc:49:5d:81:ae:d5:03:ff:61:da:ba:79:f1:17:
+    61:0f:b9:69:d9:c2:6f:00:64:5b:bc:80:89:be:40:
+    a5:f1:5b:d9:e2:be:31:dd:22:e8:90:a9:a5:6f:88:
+    57:16:8c:54:4c:a6:2a:8f:42:99:26:f1:bb:27:63:
+    78:5e:87:8d:77:0d:8d:36:c0:cd:03:f2:91:9f:5e:
+    7f:f8:88:21:e0:fd:69:df:84:e0:41:08:c2:38:e4:
+    e8:04:ea:03:f9:5f:a1:7c:e6:19:87:53:20:3d:c8:
+    c2:f1:f9:3f:e5:c4:8e:22:6b
+
+d) openssl genrsa -aes256 -passout pass:parolaputernica -out privkey.pem 2048
+
+e) winpty openssl rsa -in privkey.pem -text (De ce da freeze fara winpty?)
+
+- La executarea comenzii ne este ceruta parola folosita
+- Dupa ce parola este introdusa, avem informatiile ca mai devreme
+
+f) Valoarea exponentului de criptare este tot 65537 => Din acest punct de vedere, nivelul de securitate este neatins
+
+g) 
+
+winpty openssl rsa -in privkey.pem -pubout -out alice_pk.pem
+
+winpty openssl rsa -noout -text -inform PEM -in alice_pk.pem -pubin
+
+-------------------------------
+Exercitiul 3:
+
+a) openssl pkeyutl -sign -in bob_message.txt -inkey alice_sk.pem -out bob_message_encrypted.txt
+
+La rtf primim eroarea : Input data looks too long to be a hash. Rtf poate include in text si bold/italic/font diferit/text colorat, astfel facand inputul mult mai mare.
+
+b) openssl rand 32 > bob_symetric_key.pem
+
+openssl enc -aes-256-ctr -e -in bob_message.rtf -kfile bob_symetric_key.pem -out bob_message_encrypted.rtf
+
+openssl pkeyutl -sign -in bob_symetric_key.pem -inkey alice_sk.pem -out bob_symetric_key_encrypted.pem
+
+c) openssl enc -aes256 -d -in bob_message_encrypted.rtf -kfile bob_symetric_key_encrypted.pem
+

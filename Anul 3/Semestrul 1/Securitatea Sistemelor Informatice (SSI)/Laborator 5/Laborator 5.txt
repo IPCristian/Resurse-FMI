@@ -1,0 +1,29 @@
+PRNG - Pseudo RNG, determinist => Necesita seed (Fast)
+TRNG - True RNG (Slow)
+
+==> HRNG - Hybrid RNG - folosind un TRNG generam o secventa de biti si o folosim pe post de seed la PRNG 
+
+RNG: f : N -> N/R/[..]/{a,b,..}/{0,1}
+
+!! - Dati K biti aleatori consecutivi => Un atacator nu trb sa fie capabil sa stie ce bit ar urma dupa sau inaintea celor K biti cu o probabilitate mai mare de 1/2
+
+
+Exercitii:
+----------
+1.
+Candidat 1 - Mereu va da 0 continuu indiferent de seed
+Candidat 2 - Prea preavizibil => Ex: 8, 12, 18, 27..
+Candidat 3 - Un singur rezultat => Nu este generator
+
+3. 
+
+CVE - Common Vulnerabilities & Exposures
+CWE - Common Weakness Enumeration
+CAPEC - Common Attack Pattern Enumeration & Classification
+
+	-> Acelasi seed folosit -> CWE ID: 336
+	-> Seeduri putine => CWE ID: 339
+	-> CAPEC ID: 112 - Brute force
+	-> Pentru un CWE: 338 (Utilizare a unui Pseudo-RNG slab din punct de vedere criptografic) => Gasim CVE asociate: 2009-3278, 2009-3238, 2008-0166
+	-> Pentru 2022: Un singur CVE-2022-39218 (https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=PRNG)
+

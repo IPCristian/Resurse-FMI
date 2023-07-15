@@ -1,0 +1,21 @@
+Exercitiul 1:
+
+A - 2
+B - 4
+C - 1
+D - 3
+E - 6
+F - 5
+
+Exercitiul 2:
+
+-!! Identified as junk
+-!! Email extern domeniului
+- va -> Va
+- dvs. Contactati -> contactati
+- Home " " Bank.ro
+- ING Home'Bank
+- mesaj important (1 ): ING.ro
+- la Telefon
+- butonul Valida
+-!! Nu prezinta date personale, pare generic

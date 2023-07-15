@@ -1,0 +1,12 @@
+O(1) < O(log) < O(polinom) (Neneglijabil) < O(2^2) (neglijabil)
+
+1 si 2 au complexitate constanta => Ne-neglijabila
+
+
+
+1. Ne-neglijabila
+2. Ne-neglijabila
+3. Ne-neglijabila
+4. Neglijabila
+5. Neglijabil + Neglijabil = Neglijabila
+6. Neglijabil + Ne-neglijabil = Ne-neglijabil

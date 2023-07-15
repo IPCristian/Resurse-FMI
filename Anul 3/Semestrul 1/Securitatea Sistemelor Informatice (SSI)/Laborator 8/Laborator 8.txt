@@ -1,0 +1,21 @@
+SALT - Se adauga un sir de k biti aleatori inaintea parolei
+
+LIGHTWEIGHT CRYPTO - Crypto pe device-uri mici cu putere mica de procesare
+
+Exercitiu 1
+-----------
+a) A
+b) F
+c) A
+d) A
+e) F (E one-way, nu poti decripta)
+f) F (Pentru parole, sunt incetinite pentru a impiedica potentiali atacatori)
+g) F
+
+Exercitiul 3
+------------
+1) Aceeasi cheie pentru toti, Parole criptate
+2) Poate fi verificat daca un User are cont pe o anumita aplicatie/site fara ca acesta sa stie
+3) Nu este utilizat un salt
+4) Salt-ul nu este generat de fiecare data, este stocat undeva
+5) Este utilizat MD5 care nu este sigur la coliziuni

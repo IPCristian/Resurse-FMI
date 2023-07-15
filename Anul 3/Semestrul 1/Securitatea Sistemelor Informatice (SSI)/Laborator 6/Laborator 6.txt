@@ -1,0 +1,22 @@
+Pentru un LFSR cu n biti => Perioada maxima 2^n
+
+AES -> M = {0,1}^128
+    -> K = {0,1}^128/192/256
+    -> C = {0,1}^128
+
+Ex 3
+-----
+
+
+DES -> M = C = {0,1}^64
+    -> K = {0,1}^56
+
+Brute force => pt k => verificam toti k2, posibil memoizare 2^112 celule
+
+c,m cunoscute
+k1,k2 sunt cautate
+DES(k1,c) -> tabela cu rezultate intermediare = T1
+DES(k2,m) -> o alta tabela cu un rezultat intermediat = T2
+
+Exista si este unic un t apartine T1 /\ T2, a.i. determinam k1 si k2
+

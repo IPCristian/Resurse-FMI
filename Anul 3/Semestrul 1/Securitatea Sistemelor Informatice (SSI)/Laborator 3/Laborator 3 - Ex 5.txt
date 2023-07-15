@@ -1,0 +1,6 @@
+Securitatea perfecta => Nu poate fi spart
+		     => Chei multe
+		     => Pentru descifrarea informatiei, cheia trebuie sa se afle in ambele end-pointuri, indiferent cat de mare este, acest lucru devenind o posibila problema
+
+Securitatea computationala => Se cripteaza informatia cu o securitate ce asigura o perioada de timp dorita
+			   

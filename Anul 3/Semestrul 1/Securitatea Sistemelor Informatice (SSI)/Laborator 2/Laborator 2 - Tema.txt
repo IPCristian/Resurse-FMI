@@ -1,0 +1,29 @@
+- Link Wapp Site Cryptogram.org
+  => Explicat 2 sisteme de criptare
+
+Rezolvare
+---------
+
+Vigenere : The text is taken and distributed across rows under the letters of the key, each column being enchipered with the key's letter that coresponds to that column.
+
+Nicodemus : Similarly to Vigenere, the text is distributed under the key. Before enciphering it, we do a column transposition. After enciphering it, we take off only 5 letters at a time in columns instead of rows. 
+
+- Decodare Ex3
+
+Rezolvare
+---------
+Alice and Bob are the world's most famous cryptographic couple. Since their invention in 1978, they have at once been called inseparable, and have been the subject of numerous divorces, travels and torments. In the ensuing years, other characters have joined their cryptographic family. There's Eve, the pasive and submissive eavesdropper, Mallory the malicious attacker and Trent, trusted by all, just to name a few. While Alice, Bob and their extended family were originally used to explain how public key cryptography works, they have since become widely used across other science and engineering domains. Their influence continues to grow outside of academia as well: Alice and Bob are now a part of geek lore and subject to narratives and visual depictions that combine pedagogy with in-jokes, often reflecting of the sexiest and heteronormative environments in which they were born and continue to be used. More than just the world's most famous cryptographic couple, Alice and Bob have become an archetype of digital exchange and a lens through which to view broader digital culture - Z. Dupont and A. Cattapan, Cryptocouple
+
+- Ex 4
+
+Rezolvare
+---------
+1,2. Daily key: 17 -> Rotors : II I IV, Ring: UBJ, Plugboard: CO GV IH KD ML RB, Initial rotor: PJU
+3. CRISTI -> ANXNYP , Rotors: PJA
+4. ANXNYP -> CRISTI , Same initial settings return our plain text when inputting the encrypted one
+5. CRISTI -> The letters can't encrypt themselves
+
+
+
+
+

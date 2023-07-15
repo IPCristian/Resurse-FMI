@@ -1,0 +1,34 @@
+% Tema
+% P1 - Continuare
+
+solutie2(PosesorZebra,Strada) :-
+    Strada = [
+        casa(1,_,_,_,_,_),
+        casa(2,_,_,_,_,_),
+        casa(3,_,_,_,_,_),
+        casa(4,_,_,_,_,_),
+        casa(5,_,_,_,_,_)
+    ],
+    member(casa(_,rosie,englez,_,_,_),Strada),
+    member(casa(_,_,spaniol,caine,_,_),Strada),
+    member(casa(_,verde,_,_,cafea,_),Strada),
+    member(casa(_,_,ucrainean,_,ceai,_),Strada),
+    member(casa(A,verde,_,_,_,_),Strada),
+    member(casa(B,bej,_,_,_,_),Strada),
+    la_dreapta(A,B),
+    member(casa(_,_,_,melci,_,"Old Gold"),Strada),
+    member(casa(_,galbena,_,_,_,"Kools"),Strada),
+    member(casa(_,_,PosesorZebra,zebra,_,_),Strada),
+    member(casa(3,_,_,_,lapte,_),Strada),
+    member(casa(1,_,norvegian,_,_,_),Strada),
+    member(casa(C,_,_,_,_,"Chesterfield"),Strada),
+    member(casa(D,_,_,vulpe,_,_),Strada),
+    langa(C,D),
+    member(casa(E,_,_,_,_,"Kools"),Strada),
+    member(casa(F,_,_,cal,_,_),Strada),
+    langa(E,F),
+    member(casa(_,_,_,_,sucPortocale,"Lucky Strike"),Strada),
+    member(casa(_,_,japonez,_,_,"Parliaments"),Strada),
+    member(casa(G,_,norvegian,_,_,_),Strada),
+    member(casa(H,albastra,_,_,_,_),Strada),
+    langa(G,H).

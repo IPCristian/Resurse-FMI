@@ -1,0 +1,61 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    
+        int NrCrt = 0;
+    
+        int Search(vector<int>& inorder,int St,int Dr,int Val)   // Cautarea lui Val in Inorder si returnarea pozitiei
+        {
+            
+            int i;
+            
+            for (i=St;i<=Dr;i++)
+                if (inorder[i] == Val)
+                    return i;
+            
+            return 0;
+            
+        }
+        
+        TreeNode* StDr(vector<int>& preorder,vector<int>& inorder,int St,int Dr)
+        {
+            
+            if (St > Dr)
+                return NULL;       // Inseamna ca s-a terminat vectorul inorder
+            
+            if (NrCrt > preorder.size())
+                return NULL;       // Inseamna ca s-a terminat vectorul preorder
+            
+            // In caz contrar celor 2, continuam
+            
+            TreeNode* Nod = new TreeNode(preorder[NrCrt]); // Cream nodul curent
+            
+            int Poz = Search(inorder,St,Dr,preorder[NrCrt]); // Cautam elementul curent din Preorder in Inorder
+            
+            NrCrt++;               // Trecem la urmatorul indice
+            
+            // Pentru ca in Inorder, ordinea este Left - Root - Right inseamna ca dupa ce gasim pozitia Root-ului curent,
+            // in stanga sa in vectorul Inorder se afla fiul stang al lui Root si toti descendentii sai, analog pentru fiul drept.
+            
+            Nod->left = StDr(preorder,inorder,St,Poz-1); 
+            Nod->right = StDr(preorder,inorder,Poz+1,Dr); 
+            
+            return Nod; // Returnam Nodul curent
+        }
+        
+        TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder)
+        {
+            int size = preorder.size() - 1;
+            return StDr(preorder,inorder,0,size); 
+        }
+};

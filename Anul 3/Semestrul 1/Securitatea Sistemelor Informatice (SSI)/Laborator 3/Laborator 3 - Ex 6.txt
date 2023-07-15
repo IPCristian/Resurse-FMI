@@ -1,0 +1,3 @@
+- 2^256 chei posibile
+- 2^226 secunde daca va gasi cheia corecta ultima
+- Nu, deoarece timpul alocat gasirii cheii este mult prea mare pentru a fi realizabil 

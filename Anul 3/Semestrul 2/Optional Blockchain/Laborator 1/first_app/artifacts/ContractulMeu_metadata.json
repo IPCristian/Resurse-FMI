@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "double",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "get",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"my_first_contract.sol": "ContractulMeu"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"my_first_contract.sol": {
+			"keccak256": "0xfe5ab4e6b629890996767318325c0ba89392446a51b2501413f4a490898abae9",
+			"urls": [
+				"bzz-raw://c9c52adedd0fa893c59f9ac88358c0c7f840e10c81b4224e30fe3c062f059d70",
+				"dweb:/ipfs/QmREiLt3oPGC1ifH1umBZQRLdB1gQGiSisxawDFfuH2X1r"
+			]
+		}
+	},
+	"version": 1
+}

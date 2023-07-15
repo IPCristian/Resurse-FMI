@@ -1,0 +1,62 @@
+% Tema :
+% 1. (x*y)*z = u*(u^(-1))
+% 2. Ex3 - Path dar cu lista de vizitate
+% 3. Ex6 din Lab3
+
+% Rezolvare :
+
+% 1. Unificare pt (x*y)*z si u*(u^(-1))
+% <==> *(*(x,y),z) = *(u,(^(u,-1))
+% - Aplic Descompune => *(x,y) = u ; z = ^(u,-1)
+% - Rezolva: (Multimea solutiei: u = x*y) => z = ^(*(x,y),-1) = (x*y)^(-1)
+% - Rezolva: (Multimea solutiei: u = x*y , z = (x*y)^(-1) )
+
+% 2.
+connected(1,2).
+connected(2,1).
+connected(2,3).
+connected(3,5).
+connected(1,4).
+connected(4,6).
+
+path(X,Y) :-
+connected(X,Y).
+path(X,Y) :-
+path(X,Y,[]).
+path(Y,Y,L) :-
+write(L). % Sa vedem drumul parcurs
+path(X,Y,L) :-
+connected(X,Z),
+not(member((X,Z),L)),
+path(Z,Y,[(X,Z)|L]).
+
+% 3.  -- Incercare --
+
+animal(alligator).
+animal(tortue).
+animal(caribou).
+animal(ours).
+animal(cheval).
+animal(vache).
+animal(lapin).
+
+mutant(X) :-
+animal(A),
+animal(B),
+name(A,L1),    % A va fi cuvantul care se termina cu partea comuna
+name(B,L2),    % B va fi cuvantul care incepe cu partea comuna
+verificare(L1,L2,L3),
+name(X,L3).
+
+verificare(L1,L1,L3) :-
+false.
+verificare(L1,L2,L3) :-
+verificare(L1,L2,L3,0).
+verificare([],[],L3,1).  % Daca am combinat cuvintele si am avut ceva comun => True
+verificare([],[H|T],[H|T2],R) :-
+verificare([],T,T2,R).
+verificare([H|T],[H|T2],[H|T3],R) :-
+verificare(T,T2,T3,1). % Ultimul argument este un binar pt a verifica
+% faptul ca cele 2 cuvinte au macar ceva in comun
+verificare([H|T],[H2|T2],[H|T3],R) :-
+verificare(T,[H2|T2],T3,R).

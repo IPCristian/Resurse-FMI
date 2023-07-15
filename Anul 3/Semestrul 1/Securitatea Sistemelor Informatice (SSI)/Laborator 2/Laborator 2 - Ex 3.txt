@@ -1,0 +1,4 @@
+Avem m1, c1, c2.
+
+- Facem XOR intre m1 si c1 => Obtinem cheia comuna k
+- Facem XOR intre c2 si k => Obtinem mesajul m2

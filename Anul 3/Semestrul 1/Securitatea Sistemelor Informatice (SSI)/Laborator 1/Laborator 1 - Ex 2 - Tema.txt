@@ -1,0 +1,6 @@
+Main Ideas:
+
+- You have to think how to make systems fail
+- It's good to think how you could overcome the security of various systems around you everyday, even if doing so would be illegal. This mindset sits at the center of security.
+- You'll learn a lot of things by "hacking" your devices but you'll gain even more knowledge by trying to do the same thing to a foreign device
+- Expertise in security is in high demand but low supply.

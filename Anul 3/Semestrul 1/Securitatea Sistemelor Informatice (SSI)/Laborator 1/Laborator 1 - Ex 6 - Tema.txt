@@ -1,0 +1,11 @@
+malware - Program designed to harm computers / networks
+virus - A type of malware that, when activated, spreads to other computers, causing harm
+dropper - Malicious program designed to install other malware to the computer
+downloader - A type of malware that, when connected to the internet, downloads additional malware onto the host PC
+trojan - A program which disguises itself as a legitimate application, but is actually a malware
+spyware - Application that, once installed, starts collecting data about the user
+riskware - A legitimate program that has certain vulnerabilities making it a potential risk
+ransomware - A type of malware that, after being installed, usually encrypts the user data and requires the victim to pay a sum of money for their data
+adware - Program designed to throw adverts on the user's screen through different methods
+worm - A type of malware that doesn't instantly have a negative output, instead opting to spread itself to other computers 
+obfuscation - Obfuscated data can be understood just by knowing the algorithm used on it, no key being necessary for decryption
